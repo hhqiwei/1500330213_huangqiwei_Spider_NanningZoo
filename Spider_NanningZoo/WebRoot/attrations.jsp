@@ -1,7 +1,8 @@
 	<!--
 	景点简介界面
 	-->
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,java.sql.*" pageEncoding="utf-8"%> 
+<%@ page contentType="text/html;charset=utf-8"%> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -43,13 +44,82 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!-- //script for close -->
 
 
+<style type="text/css">
+table {  
+    border: 2px #CCCCCC solid;  
+    width: 800px;  
+    margin:auto;
+    color: white;
+}  
+  
+td,th {  
+    height: 30px;  
+    border: #CCCCCC 1px solid;
+    text-align:center;
+}  
+</style>
+
   </head>
   
   <body>
+  
+  
+  
+    <%  
+        //驱动程序名   
+        String driverName = "com.mysql.jdbc.Driver";  
+        //数据库用户名   
+        String userName = "root";  
+        //密码   
+        String userPasswd = "huangqiwei";  
+        //数据库名   
+        String dbName = "spider_data";  
+        //表名   
+        String tableName = "spider_information";  
+        //联结字符串   
+        String url = "jdbc:mysql://localhost:3306/" + dbName + "?user="  
+                + userName + "&password=" + userPasswd;  
+        Class.forName("com.mysql.jdbc.Driver").newInstance();  
+        Connection connection = DriverManager.getConnection(url);  
+        Statement statement = connection.createStatement();  
+        String sql = "SELECT * FROM " + tableName;  
+        ResultSet rs = statement.executeQuery(sql);  
+    %>  
+    
+    <br>  
+    <br>  
+     <div align="center">  
+    <table >  
+            <%  
+            while (rs.next()) {  
+        %>  
+        <tr>   
+            <th>  
+                <%  
+                    out.print(rs.getString(2));  
+                %>   
+            </th>
+        </tr> 
+        <tr>   
+            <td>  
+                <%  
+                    out.print(rs.getString(7));  
+                %>  
+            </td>  
+        </tr>  
+        <%  
+           break; }  
+        %>  
+    </table>  
+    </div>
+    <div align="center" style="color:#FFFFFF">  
+        <br> 
+        <br>
    	<div class="w3ls-form">
-				<form action="index.jsp" method="post">
-					<button class="btn1" onclick="window.location.href = 'index.jsp'"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
-			</form>
-			</div>
+		<form action="index.jsp" method="post">
+		<button class="btn1" onclick="window.location.href = 'index.jsp'"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+		</form>
+	</div>
+	</div>
   </body>
 </html>
