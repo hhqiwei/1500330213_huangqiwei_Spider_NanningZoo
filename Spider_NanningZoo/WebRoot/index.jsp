@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<h2>南宁动物园爬虫</h2>
 			<h3><a class="trigger-custom2">点击开始爬取</a></h3>
 			<div align="center">
-			<button class="btn1"  ><a class="trigger-custom2"><i class="fa fa-paper-plane" aria-hidden="true"></i></a></button>
+			<button class="btn1"  ><a class="trigger-custom2"><i class="fa fa-play-circle" aria-hidden="true"></i></a></button>
 			</div>
 			<div class="w3ls-form">
 				<form action="index.jsp" method="post">

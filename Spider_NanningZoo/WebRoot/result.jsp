@@ -132,14 +132,14 @@ td,th {
      <div align="center" style="color:#FFFFFF">  
         <br> <br> <br>  
         <%  
-            out.print("数据查询成功，恭喜你!");  
+            out.print("数据查询成功，恭喜你!点击下面按钮返回首页。");  
         %>  
+      </div>  
         	<div class="w3ls-form">
 				<form action="index.jsp" method="post">
 					<button class="btn1" onclick="window.location.href = 'index.jsp'"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 			</form>
 			</div>
-    </div>  
     <%  
         rs.close();  
         statement.close();  

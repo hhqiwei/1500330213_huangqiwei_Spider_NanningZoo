@@ -1,21 +1,21 @@
-<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page language="java" import="java.util.*,java.sql.*" pageEncoding="utf-8"%> 
+<%@ page contentType="text/html;charset=utf-8"%> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
     <base href="<%=basePath%>">
-    
     <title>交通</title>
-    
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
@@ -37,13 +37,94 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		});
 	</script>
 	<!-- //script for close -->
-  </head>
+	
+<style type="text/css">
+table {  
+    border: 2px #CCCCCC solid;  
+    width: 800px;  
+    margin:auto;
+    color: white;
+}  
+  
+td,th {  
+    height: 30px;  
+    border: #CCCCCC 1px solid;
+    text-align:center;
+}  
+</style>
+	</head>
   
   <body>
-      	<div class="w3ls-form">
-				<form action="index.jsp" method="post">
+    <%  
+        //驱动程序名   
+        String driverName = "com.mysql.jdbc.Driver";  
+        //数据库用户名   
+        String userName = "root";  
+        //密码   
+        String userPasswd = "huangqiwei";  
+        //数据库名   
+        String dbName = "spider_data";  
+        //表名   
+        String tableName = "spider_information";  
+        //联结字符串   
+        String url = "jdbc:mysql://localhost:3306/" + dbName + "?user="  
+                + userName + "&password=" + userPasswd;  
+        Class.forName("com.mysql.jdbc.Driver").newInstance();  
+        Connection connection = DriverManager.getConnection(url);  
+        Statement statement = connection.createStatement();  
+        String sql = "SELECT * FROM " + tableName;  
+        ResultSet rs = statement.executeQuery(sql);  
+    %>  
+    <br>  
+    <br>  
+    <div align="center">  
+    <table >  
+        <tr>  
+            <th>  
+                <%  
+                    out.print("ID");  
+                %>  
+            </th>  
+            <th>  
+                <%  
+                    out.print("交通");  
+                %>  
+            </th>
+        </tr>
+        <%  
+            while (rs.next()) {  
+        %>  
+        <tr>  
+            <td>  
+                <%  
+                    out.print(rs.getString(1));  
+                %>  
+            </td>  
+            <td>  
+                <%  
+                    out.print(rs.getString(8));  
+                %>  
+            </td>   
+        </tr>  
+        <%  
+            }  
+        %>  
+    </table>  
+    </div>
+    <div align="center" style="color:#FFFFFF">  
+        <br>  
+ 		 <iframe src="map_nanningzoo.html" width="697px" height="550px" frameborder="0" scrolling="no"></iframe>
+        <br>
+        <br>
+        <br>  
+        <%  
+            out.print("数据查询成功，恭喜你!点击下面按钮返回首页。");  
+        %>  
+     </div>
+     <div class="w3ls-form">
+			<form action="index.jsp" method="post">
 					<button class="btn1" onclick="window.location.href = 'index.jsp'"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 			</form>
-			</div>
+	</div>
   </body>
 </html>
