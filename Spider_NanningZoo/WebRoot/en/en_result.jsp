@@ -1,6 +1,3 @@
-	<!--
-	景点简介界面
-	-->
 <%@ page language="java" import="java.util.*,java.sql.*" pageEncoding="utf-8"%> 
 <%@ page contentType="text/html;charset=utf-8"%> 
 <%
@@ -13,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>南宁动物园简介</title>
+    <title>评论爬取结果</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -23,7 +20,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
+<style type="text/css">
+table {  
+    border: 2px #CCCCCC solid;  
+    width: 800px;  
+    margin:auto;
+    color: white;
+}  
+  
+td,th {  
+    height: 30px;  
+    border: #CCCCCC 1px solid;
+    text-align:center;
+}  
+</style>
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/okayNav.min.css">
+	
 	  <!-- //for-mobile-apps -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -42,28 +55,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		});
 	</script>
 	<!-- //script for close -->
-
-
-<style type="text/css">
-table {  
-    border: 2px #CCCCCC solid;  
-    width: 800px;  
-    margin:auto;
-    color: white;
-}  
-  
-td,th {  
-    height: 30px;  
-    border: #CCCCCC 1px solid;
-    text-align:center;
-}  
-</style>
-
+	
+	
   </head>
   
   <body>
-  
-  
+
   
     <%  
         //驱动程序名   
@@ -75,7 +72,7 @@ td,th {
         //数据库名   
         String dbName = "spider_data";  
         //表名   
-        String tableName = "spider_information";  
+        String tableName = "spider_nanningzoo";  
         //联结字符串   
         String url = "jdbc:mysql://localhost:3306/" + dbName + "?user="  
                 + userName + "&password=" + userPasswd;  
@@ -89,44 +86,64 @@ td,th {
     <br>  
      <div align="center">  
     <table >  
-            <%  
-            while (rs.next()) {  
-        %>  
-        <tr>   
+        <tr>  
             <th>  
                 <%  
-                    out.print(rs.getString(2));  
-                %>   
-            </th>
-        </tr> 
-        <tr>   
+                    out.print("ID");  
+                %>  
+            </th>  
+            <th>  
+                <%  
+                    out.print("用户名");  
+                %>  
+            </th>  
+               <th>  
+                <%  
+                    out.print("评论内容");  
+                %>  
+            </th> 
+        </tr>  
+  
+        <%  
+            while (rs.next()) {  
+        %>  
+        <tr>  
             <td>  
                 <%  
-                    out.print(rs.getString(7));  
+                    out.print(rs.getString(1));  
+                %>  
+            </td>  
+            <td>  
+                <%  
+                    out.print(rs.getString(2));  
+                %>  
+            </td>  
+            <td>  
+                <%  
+                    out.print(rs.getString(3));  
                 %>  
             </td>  
         </tr>  
         <%  
-           break; }  
+            }  
         %>  
     </table>  
     </div>
-    
-        <div align="center" style="color:#FFFFFF">  
-           <br> 
-           <br>
-        <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=64" width="540" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-        <br> 
-        <br> 
-        <br>  
+     <div align="center" style="color:#FFFFFF">  
+        <br> <br> <br>  
         <%  
-            out.print("数据查询成功，恭喜你!点击下面按钮返回首页。");  
+            out.print("Data query success, congratulations! Click the button below to return home.");  
         %>  
       </div>  
-    <div class="w3ls-form">
+        	<div class="w3ls-form">
 				<form action="index.jsp" method="post">
 					<button class="btn1" onclick="window.location.href = 'index.jsp'"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 			</form>
-	</div>
+			</div>
+    <%  
+        rs.close();  
+        statement.close();  
+        connection.close();  
+    %>  
   </body>
 </html>

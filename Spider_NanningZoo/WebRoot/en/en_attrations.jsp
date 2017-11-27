@@ -13,7 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>南宁动物园简介</title>
+    <title>Nanning Zoo Introduction</title>
     
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
@@ -120,7 +120,7 @@ td,th {
         <br> 
         <br>  
         <%  
-            out.print("数据查询成功，恭喜你!点击下面按钮返回首页。");  
+            out.print("Data query success, congratulations! Click the button below to return home.");  
         %>  
       </div>  
     <div class="w3ls-form">

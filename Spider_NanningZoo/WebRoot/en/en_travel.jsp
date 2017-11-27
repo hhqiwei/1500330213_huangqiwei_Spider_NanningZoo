@@ -1,6 +1,3 @@
-	<!--
-	景点简介界面
-	-->
 <%@ page language="java" import="java.util.*,java.sql.*" pageEncoding="utf-8"%> 
 <%@ page contentType="text/html;charset=utf-8"%> 
 <%
@@ -8,23 +5,21 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
   <head>
     <base href="<%=basePath%>">
-    
-    <title>南宁动物园简介</title>
-    
+    <title>交通</title>
 	<meta http-equiv="pragma" content="no-cache">
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
+	
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-
-	  <!-- //for-mobile-apps -->
+	 <!-- //for-mobile-apps -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<script src="js/jquery-2.1.4.min.js"></script>
@@ -42,8 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		});
 	</script>
 	<!-- //script for close -->
-
-
+	
 <style type="text/css">
 table {  
     border: 2px #CCCCCC solid;  
@@ -58,13 +52,9 @@ td,th {
     text-align:center;
 }  
 </style>
-
-  </head>
+	</head>
   
   <body>
-  
-  
-  
     <%  
         //驱动程序名   
         String driverName = "com.mysql.jdbc.Driver";  
@@ -87,44 +77,52 @@ td,th {
     %>  
     <br>  
     <br>  
-     <div align="center">  
+    <div align="center">  
     <table >  
-            <%  
-            while (rs.next()) {  
-        %>  
-        <tr>   
+        <tr>  
             <th>  
                 <%  
-                    out.print(rs.getString(2));  
-                %>   
+                    out.print("ID");  
+                %>  
+            </th>  
+            <th>  
+                <%  
+                    out.print("交通");  
+                %>  
             </th>
-        </tr> 
-        <tr>   
+        </tr>
+        <%  
+            while (rs.next()) {  
+        %>  
+        <tr>  
             <td>  
                 <%  
-                    out.print(rs.getString(7));  
+                    out.print(rs.getString(1));  
                 %>  
             </td>  
+            <td>  
+                <%  
+                    out.print(rs.getString(8));  
+                %>  
+            </td>   
         </tr>  
         <%  
-           break; }  
+            }  
         %>  
     </table>  
     </div>
-    
-        <div align="center" style="color:#FFFFFF">  
-           <br> 
-           <br>
-        <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=64" width="540" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-        <br> 
-        <br> 
+    <div align="center" style="color:#FFFFFF">  
+        <br>  
+ 		 <iframe src="map_nanningzoo.html" width="697px" height="550px" frameborder="0" scrolling="no"></iframe>
+        <br>
+        <br>
         <br>  
         <%  
-            out.print("数据查询成功，恭喜你!点击下面按钮返回首页。");  
+            out.print("Data query success, congratulations! Click the button below to return home.");  
         %>  
-      </div>  
-    <div class="w3ls-form">
-				<form action="index.jsp" method="post">
+     </div>
+     <div class="w3ls-form">
+			<form action="index.jsp" method="post">
 					<button class="btn1" onclick="window.location.href = 'index.jsp'"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 			</form>
 	</div>
