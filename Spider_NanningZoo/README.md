@@ -22,3 +22,8 @@ https://ke.qq.com/webcourse/index.html#course_id=231847&term_id=100273482&taid=1
 
 2017-11-19 星期日 15:12:35
 在travel.jsp页面上添加百度地图（调用map_nanningzoo.html页面）
+
+
+2017-11-27 星期一 20:43:11
+增加英文翻译
+添加谷歌翻译插件（https://translate.google.com/manager/website/add?security_token=ALkJrhis0IXevHfMhlHEIwczRyC4l5eeGA%3A1511786498755&step=2&prevStep=1&hl=zh-CN&tl=en&dm=1&ad=1&apl=0&ana=0&aid=）

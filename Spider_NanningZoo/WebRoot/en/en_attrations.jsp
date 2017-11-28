@@ -58,13 +58,20 @@ td,th {
     text-align:center;
 }  
 </style>
-
-  </head>
+	</head>
   
-  <body>
-  
-  
-  
+	<body>
+	
+	<!-- 调用谷歌翻译，翻译整个网页 -->
+  		<div id="google_translate_element"></div>
+  		<script type="text/javascript">
+			function googleTranslateElementInit() {
+  				new google.translate.TranslateElement({pageLanguage: 'zh-CN', includedLanguages: 'en'}, 'google_translate_element');
+			}
+		</script>
+		<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+		</script>
+        
     <%  
         //驱动程序名   
         String driverName = "com.mysql.jdbc.Driver";  
@@ -87,9 +94,9 @@ td,th {
     %>  
     <br>  
     <br>  
-     <div align="center">  
+    <div align="center">  
     <table >  
-            <%  
+        <%  
             while (rs.next()) {  
         %>  
         <tr>   
@@ -113,8 +120,8 @@ td,th {
     </div>
     
         <div align="center" style="color:#FFFFFF">  
-           <br> 
-           <br>
+        <br> 
+        <br>
         <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=64" width="540" height="291" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
         <br> 
         <br> 
@@ -124,9 +131,9 @@ td,th {
         %>  
       </div>  
     <div class="w3ls-form">
-				<form action="index.jsp" method="post">
-					<button class="btn1" onclick="window.location.href = 'index.jsp'"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+			<form action="index.jsp" method="post">
+				<button class="btn1" onclick="window.location.href = 'index.jsp'"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
 			</form>
-	</div>
-  </body>
+		</div>
+	</body>
 </html>

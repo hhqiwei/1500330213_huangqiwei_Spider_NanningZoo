@@ -1,6 +1,4 @@
-	<!--
-	景点简介界面
-	-->
+<!--景点简介界面-->
 <%@ page language="java" import="java.util.*,java.sql.*" pageEncoding="utf-8"%> 
 <%@ page contentType="text/html;charset=utf-8"%> 
 <%
@@ -62,9 +60,6 @@ td,th {
   </head>
   
   <body>
-  
-  
-  
     <%  
         //驱动程序名   
         String driverName = "com.mysql.jdbc.Driver";  
