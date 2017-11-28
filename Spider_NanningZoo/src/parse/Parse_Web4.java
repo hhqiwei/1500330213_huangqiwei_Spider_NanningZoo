@@ -18,17 +18,17 @@ public class Parse_Web4 {
 
 		// 网页标题title，head > title
 		Elements title = doc.select("head").select("title");
-		System.out.println("网页标题：" + title.text());
+		// System.out.println("网页标题：" + title.text());
 
 		// 景点地址address,.sub
 		Elements address = doc.select(".sub");
-		System.out.println("景点地址：" + address.text());
+		// System.out.println("景点地址：" + address.text());
 
 		// 门票tickets，div.mod:nth-child(2) > dl:nth-child(4) > dd:nth-child(2) >
 		// div:nth-child(1)
 		Elements tickets = doc.select("div.mod:nth-child(2)").select("dl:nth-child(4)").select("dd:nth-child(2)")
 				.select("div:nth-child(1)");
-		System.out.println("门票：" + tickets.text());
+		// System.out.println("门票：" + tickets.text());
 
 		// 评分score，.v2_tp_sat > span:nth-child(1)
 		Elements score = doc.select(".v2_tp_sat").select("span:nth-child(1)");
@@ -37,19 +37,20 @@ public class Parse_Web4 {
 		// 开放时间open_time，div.mod:nth-child(2) > dl:nth-child(5) >
 		// dd:nth-child(2)
 		Elements open_time = doc.select("div.mod:nth-child(2)").select("dl:nth-child(5)").select("dd:nth-child(2)");
-		System.out.println("开放时间：" + open_time.text());
+		// System.out.println("开放时间：" + open_time.text());
 
 		// 景点简介attractions,.summary
 		Elements attractions = doc.select(".summary");
-		System.out.println("景点介绍：" + attractions.text());
+		// System.out.println("景点介绍：" + attractions.text());
 
 		// 交通信息travel_information,div.mod:nth-child(2) > dl:nth-child(3) >
 		// dd:nth-child(2)
 		Elements travel_information = doc.select("div.mod:nth-child(2)").select("dl:nth-child(3)")
 				.select("dd:nth-child(2)");
-		System.out.println("交通信息：" + travel_information.text().replace("[1]", ""));
+		// System.out.println("交通信息：" + travel_information.text().replace("[1]",
+		// ""));
 
-		System.out.println("+++++++解析完成！+++++++");
+		// System.out.println("+++++++解析完成！+++++++");
 
 		// 将解析出的数据存入数据库spider_informaiton中
 		Connect_MySql cMySql = new Connect_MySql();

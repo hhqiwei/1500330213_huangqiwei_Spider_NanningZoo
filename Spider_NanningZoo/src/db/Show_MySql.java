@@ -24,7 +24,7 @@ public class Show_MySql {
 		// 驱动程序名称
 		String driver = "com.mysql.jdbc.Driver";
 		// URL指向要访问的数据库名mydata
-		String url = "jdbc:mysql://localhost:3306/spider_data?useUnicode=true&amp;characterEncoding=utf-8&useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/1500330213_huangqiwei_NanningZoo_Spider?useUnicode=true&amp;characterEncoding=utf-8&useSSL=false";
 		// MySQL配置时的用户名
 		String user = "root";
 		// MySQL配置时的密码
@@ -82,7 +82,7 @@ public class Show_MySql {
 		// 驱动程序名称
 		String driver = "com.mysql.jdbc.Driver";
 		// URL指向要访问的数据库名mydata
-		String url = "jdbc:mysql://localhost:3306/spider_data?useUnicode=true&amp;characterEncoding=utf-8&useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/1500330213_huangqiwei_NanningZoo_Spider?useUnicode=true&amp;characterEncoding=utf-8&useSSL=false";
 		// MySQL配置时的用户名
 		String user = "root";
 		// MySQL配置时的密码

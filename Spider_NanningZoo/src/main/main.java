@@ -4,6 +4,7 @@ import org.jsoup.nodes.Document;
 
 import db.Clean_MySql;
 import db.Show_MySql;
+import parse.Parse_Web;
 import parse.Parse_Web1;
 import parse.Parse_Web2;
 import parse.Parse_Web3;
@@ -21,6 +22,7 @@ public class main {
 		DownloadHtml dlh = new DownloadHtml();
 		Show_MySql sms = new Show_MySql();
 		Clean_MySql cms = new Clean_MySql();
+		Parse_Web pWeb = new Parse_Web();
 		Parse_Web1 pWeb1 = new Parse_Web1();
 		Parse_Web2 pWeb2 = new Parse_Web2();
 		Parse_Web3 pWeb3 = new Parse_Web3();
@@ -46,12 +48,15 @@ public class main {
 			doc[i] = dlh.getHtmlTextByPath(strArray1[i], strArray[i]);
 		}
 
+		pWeb.Get_LocalHtml(doc[0]);
+
 		pWeb1.Get_LocalHtml(doc[0]);
 		pWeb2.Get_LocalHtml(doc[1]);
 		pWeb3.Get_LocalHtml(doc[2]);
 		pWeb4.Get_LocalHtml(doc[3]);
 
-		Show_MySql.Show_Spider_Informatin_MySQL();
+		// Show_MySql.Show_Spider_Informatin_MySQL();
+		// Show_MySql.Show_Spider_NanningZoo_MySQL();
 		st.show_time();
 	}
 }
