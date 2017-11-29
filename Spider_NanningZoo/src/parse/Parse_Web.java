@@ -9,7 +9,7 @@ import db.Connect_MySql;
 
 /**
  * @ClassName: Parse_Web
- * @Description: 用JSOUP解析本地的html文件，并存入数据库
+ * @Description: 爬取用户名字和评论,用JSOUP解析本地的html文件，并存入数据库
  * @author 黄启威
  * @date 2017年11月16日 下午9:18:05
  *

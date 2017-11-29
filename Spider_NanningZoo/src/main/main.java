@@ -56,7 +56,7 @@ public class main {
 		pWeb4.Get_LocalHtml(doc[3]);
 
 		// Show_MySql.Show_Spider_Informatin_MySQL();
-		// Show_MySql.Show_Spider_NanningZoo_MySQL();
+		Show_MySql.Show_Spider_NanningZoo_MySQL();
 		st.show_time();
 	}
 }

@@ -68,7 +68,7 @@ td,th {
         //密码   
         String userPasswd = "huangqiwei";  
         //数据库名   
-        String dbName = "spider_data";  
+        String dbName = "1500330213_huangqiwei_NanningZoo_Spider";  
         //表名   
         String tableName = "spider_information";  
         //联结字符串   
