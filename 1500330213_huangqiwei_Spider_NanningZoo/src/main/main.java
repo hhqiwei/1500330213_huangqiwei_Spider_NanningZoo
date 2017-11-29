@@ -37,23 +37,23 @@ public class main {
 		cms.clean_mysql("spider_information");
 
 		// string数组用来存放网页
-		String[] strArray = { "http://piao.ctrip.com/dest/t8812.html", "http://menpiao.tuniu.com/t_4805",
+		String[] strArray = { "http://you.ctrip.com/sight/nanning166/8812.html",
+				"http://piao.ctrip.com/dest/t8812.html", "http://menpiao.tuniu.com/t_4805",
 				"https://baike.baidu.com/item/%E5%8D%97%E5%AE%81%E5%8A%A8%E7%89%A9%E5%9B%AD/8663899?fr=aladdin",
 				"http://www.mafengwo.cn/poi/5435132.html" };
 		// string数组用来存放文件名字
-		String[] strArray1 = { "携程", "途牛", "百度百科", "马蜂窝" };
+		String[] strArray1 = { "用户评论", "携程", "途牛", "百度百科", "马蜂窝" };
 		//
 		Document[] doc = { null, null, null, null };
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 5; i++) {
 			doc[i] = dlh.getHtmlTextByPath(strArray1[i], strArray[i]);
 		}
 
 		pWeb.Get_LocalHtml(doc[0]);
-
-		pWeb1.Get_LocalHtml(doc[0]);
-		pWeb2.Get_LocalHtml(doc[1]);
-		pWeb3.Get_LocalHtml(doc[2]);
-		pWeb4.Get_LocalHtml(doc[3]);
+		pWeb1.Get_LocalHtml(doc[1]);
+		pWeb2.Get_LocalHtml(doc[2]);
+		pWeb3.Get_LocalHtml(doc[3]);
+		pWeb4.Get_LocalHtml(doc[4]);
 
 		// Show_MySql.Show_Spider_Informatin_MySQL();
 		Show_MySql.Show_Spider_NanningZoo_MySQL();

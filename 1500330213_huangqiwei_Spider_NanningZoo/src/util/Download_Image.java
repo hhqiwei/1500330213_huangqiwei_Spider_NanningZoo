@@ -70,7 +70,6 @@ public class Download_Image {
 
 				}
 			}
-
 		}
 		return null;
 	}

@@ -32,7 +32,7 @@ public class Parse_Web4 {
 
 		// 评分score，.v2_tp_sat > span:nth-child(1)
 		Elements score = doc.select(".v2_tp_sat").select("span:nth-child(1)");
-		System.out.println("评分/满意度：" + score.text());
+		// System.out.println("评分/满意度：" + score.text());
 
 		// 开放时间open_time，div.mod:nth-child(2) > dl:nth-child(5) >
 		// dd:nth-child(2)

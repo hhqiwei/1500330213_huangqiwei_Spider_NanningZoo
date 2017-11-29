@@ -33,7 +33,7 @@ public class Parse_Web1 {
 
 		// 评分/满意度score，#J-grade > i
 		Elements score = doc.select("#J-grade").select("i");
-		System.out.println("评分/满意度：" + score.text());
+		// System.out.println("评分/满意度：" + score.text());
 
 		// 开放时间open_time，.j-limit
 		// Element open_time = containerDoc1.select("span:contains(1)").first();
