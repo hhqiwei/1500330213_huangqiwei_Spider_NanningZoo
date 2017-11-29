@@ -48,7 +48,7 @@ public class main {
 		for (int i = 0; i < 5; i++) {
 			doc[i] = dlh.getHtmlTextByPath(strArray1[i], strArray[i]);
 		}
-
+		
 		pWeb.Get_LocalHtml(doc[0]);
 		pWeb1.Get_LocalHtml(doc[1]);
 		pWeb2.Get_LocalHtml(doc[2]);
